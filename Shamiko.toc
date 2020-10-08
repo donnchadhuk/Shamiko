@@ -1,0 +1,4 @@
+## Interface: 11303
+## Title: Shamiko
+## Notes: A group organizing addon
+Shamiko.lua
