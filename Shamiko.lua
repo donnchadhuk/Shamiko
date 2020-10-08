@@ -120,7 +120,7 @@ function Shamiko:SwapPlayers(player1, player2)
         if player.raidId == player1.raidId then
             SHAMIKO_GROUP_MAP[i].group = player2.group
         elseif player.raidId == player2.raidId then
-            SHAMIKO_GROUP_MAP[i].grouip = player1.group
+            SHAMIKO_GROUP_MAP[i].group = player1.group
         end
     end
 end
