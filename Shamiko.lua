@@ -116,11 +116,13 @@ end
 function Shamiko:SwapPlayers(player1, player2)
     SwapRaidSubgroup(player1.raidId, player2.raidId)
 
+    local newPlayer1group = player2.group
+    local newPlayer2group = player1.group
     for i,player in pairs(SHAMIKO_GROUP_MAP) do
         if player.raidId == player1.raidId then
-            SHAMIKO_GROUP_MAP[i].group = player2.group
+            SHAMIKO_GROUP_MAP[i].group = newPlayer1group
         elseif player.raidId == player2.raidId then
-            SHAMIKO_GROUP_MAP[i].group = player1.group
+            SHAMIKO_GROUP_MAP[i].group = newPlayer2group
         end
     end
 end
