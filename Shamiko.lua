@@ -29,7 +29,7 @@ function Shamiko:FormatList(stringList)
     local list = {}
 
     for index, player in ipairs(players) do
-        local grp = math.ceil(index / 5) -- ALSO REMEMBER MAKE WA FOR LCOAK, ONY, BWL
+        local grp = math.ceil(index / 5)
 
         if list[grp] == nil then
             list[grp] = { player }
@@ -118,6 +118,7 @@ function Shamiko:SwapPlayers(player1, player2)
 
     local newPlayer1group = player2.group
     local newPlayer2group = player1.group
+
     for i,player in pairs(SHAMIKO_GROUP_MAP) do
         if player.raidId == player1.raidId then
             SHAMIKO_GROUP_MAP[i].group = newPlayer1group
@@ -173,6 +174,7 @@ function Shamiko:HasValue(tab, val)
     return false
 end
 
+-- Should probably use XML for the frame, but I'm noob at that...
 function Shamiko:ShowInputFrame()
     local frame = CreateFrame("FRAME")
     frame.name = name
@@ -189,7 +191,7 @@ function Shamiko:ShowInputFrame()
     frame:SetBackdropColor(0,0,0,1)
     frame:SetBackdropBorderColor(0,0,0,1)
 
-    local s = CreateFrame("ScrollFrame", nil, frame, "UIPanelScrollFrameTemplate") -- or you actual parent instead
+    local s = CreateFrame("ScrollFrame", nil, frame, "UIPanelScrollFrameTemplate")
     s:SetSize(300,200)
     s:SetPoint("CENTER")
     local e = CreateFrame("EditBox", nil, s)
